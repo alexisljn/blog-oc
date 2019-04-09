@@ -1,0 +1,16 @@
+<li [ngClass] = '{"list-group-item": true,
+				  "list-group-item-success": articleLoveIts > 0,
+				  "list-group-item-danger": articleLoveIts < 0}'>
+	 <h2>{{ articleTitle }}</h2>
+	 <p>{{ articleContent }}</p>
+	 <p>{{ articleCreatedAt | date:'short' }}</p>
+
+	 <button class="btn btn-success" (click)='onLike()'>J'aime</button>
+	 <button class="btn btn-danger" (click)='onDislike()'>Je n'aime pas</button>
+</li>
+
+<!-- Utilisation de la directive ngClass pour affecter dynamiquement une classe selon la valeur de articleLoveIts récupéré dans post-list-component grâce à un attribut 
+
+On affiche ensuite grâce à l'interpolation les différentes variables et enfin dans nos buttons on réagit à l'évent click
+
+Le ngClass se fait directement dans le composant comme ça le traitement de onLike() et onDislike() peut être interprété sans extra-communication avec le composant parent (post list)-->

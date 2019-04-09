@@ -1,0 +1,13 @@
+<h1>Posts</h1>
+<ul>
+	<app-post-list-item *ngFor='let article of articles'
+						[articleTitle]='this.article.title'
+						[articleContent]='this.article.content'
+						[articleLoveIts]='this.article.loveIts'
+						[articleCreatedAt]='this.article.created_at'></app-post-list-item>
+</ul>
+
+<!--  Ici le ngFor nous sert à iterer notre <app-post-list-item> afin qu'il soit créer autant de fois que nécessaire
+c'est à dire le nombre d'article présents dans articles.
+
+Les attributs servent à récupérer les propriétés de nos objets pour leur traitement en Typescript --> 
